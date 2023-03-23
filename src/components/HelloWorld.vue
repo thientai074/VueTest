@@ -14,14 +14,15 @@
     <input type="radio" value="pop"> <label>Save my data</label>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 defineProps({
   title: String
 })
 </script>
-<script>
+<script >
 export default {
+  name: "HelloWorld",
   data() {
     return {
       search:"",
@@ -30,7 +31,7 @@ export default {
     }
   },
   computed: {
-    getAge() {
+    getAge(): any { {
       fetch('https://api.agify.io/?name='+ this.search)
           .then(response => response.json())
           .then(data => {
